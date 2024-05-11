@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Soda
+  - Bleach
+  - Coffee
+  - Orange Juice
+  - Apple Juice
+  - Lemon Juice
+  - Milk
+  - Detergent
+  - Molasses
+  - Saliva
+  - Ammonia
+  - Blood
+  - Mouthwash
+  - Soap
+  - Trail
+  - Box
+  - Molecule
+  - Reagents1
+  - Reagents2
+  - Products1
+  - Products2
+  - Neutron
+  - Proton
+  - Electron
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Flask 1
+  - Flask 2
+  - Flask 3
+  - Flask 4
+  - Flask 5
+  - Flask 6
+  - Mixing Bowl
+  - Molecule
+  - Reagents
+  - Products
+  - Proton Launcher
+  - Neutron Launcher
+  - Electron Launcher
+  - Nucleus
+  - Electron Cloud
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
