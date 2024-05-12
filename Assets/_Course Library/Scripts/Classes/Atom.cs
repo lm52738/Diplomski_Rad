@@ -15,13 +15,12 @@ public class Atom
     private IonType ionType;
     private string cationText;
     private string anionText;
-    private string isotopText;
     private string neutralText;
     private string description;
 
     // Constructors
     // All-argument constructor
-    public Atom(string name, string symbol, int protons, int neutrons, int electrons, int atomicMass, double atomicRelativeMass, IonType ionType, string cationText, string anionText, string isotopText, string neutralText, string description)
+    public Atom(string name, string symbol, int protons, int neutrons, int electrons, int atomicMass, double atomicRelativeMass, IonType ionType, string cationText, string anionText, string neutralText, string description)
     {
         this.name = name;
         this.symbol = symbol;
@@ -33,7 +32,6 @@ public class Atom
         this.ionType = ionType;
         this.cationText = cationText;
         this.anionText = anionText;
-        this.isotopText = isotopText;
         this.neutralText = neutralText;
         this.description = description;
     }
@@ -52,7 +50,6 @@ public class Atom
         this.ionType = IonType.Neutral;
         this.cationText = "";
         this.anionText = "";
-        this.isotopText = "";
         this.neutralText = "";
         this.description = "";
     }
@@ -70,7 +67,6 @@ public class Atom
         this.ionType = null;
         this.cationText = "";
         this.anionText = "";
-        this.isotopText = "";
         this.neutralText = "";
         this.description = "";
     }
@@ -136,12 +132,6 @@ public class Atom
         set { anionText = value; }
     }
 
-    public string IsotopText
-    {
-        get { return isotopText; }
-        set { isotopText = value; }
-    }
-
     public string NeutralText
     {
         get { return neutralText; }
@@ -165,9 +155,8 @@ public class Atom
                              "Ion Type: {7}\n" +
                              "Cation Text: {8}\n" +
                              "Anion Text: {9}\n" +
-                             "Isotope Text: {10}\n" +
                              "Neutral Text: {11}\n" +
                              "Description: {12}",
-                             name, symbol, protons, neutrons, electrons, atomicMass, atomicRelativeMass, ionType, cationText, anionText, isotopText, neutralText, description);
+                             name, symbol, protons, neutrons, electrons, atomicMass, atomicRelativeMass, ionType, cationText, anionText, neutralText, description);
     }
 }

@@ -15,7 +15,7 @@ public class CreateEquation : MonoBehaviour
     public GameObject[] productsMats; // Array of products mats
     public GameObject reagentsBox;
     public GameObject productsBox; 
-    private int currentLevel = 4;
+    private int currentLevel = 0;
     private Equation[] equations; // Array of Equation objects
     private string currentEquationText = "";
 
@@ -290,7 +290,7 @@ public class CreateEquation : MonoBehaviour
             int existingCount = match.Groups[2].Success ? int.Parse(match.Groups[2].Value) : 0; // change from 1 to 0
             int newCount = count; // Just set the new count directly
 
-            Debug.Log("Updated molecule count for " + moleculeType + " on " + side + " side from " + existingCount + " to " + newCount);
+            //Debug.Log("Updated molecule count for " + moleculeType + " on " + side + " side from " + existingCount + " to " + newCount);
 
             return Regex.Replace(equation, pattern, newCount.ToString() + " " + moleculeType);
         }

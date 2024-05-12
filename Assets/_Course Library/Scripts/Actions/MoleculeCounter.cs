@@ -51,7 +51,7 @@ public class MoleculeCounter : MonoBehaviour
                 // Add the molecule to the list and log
                 moleculesInside.Add(collidedObject);
 
-                LogBoxContents();
+                // LogBoxContents();
 
                 createEquationScript.UpdateEquation();
             }             
@@ -79,7 +79,7 @@ public class MoleculeCounter : MonoBehaviour
             // Remove the molecule ID from the list
             collidedMoleculeIDs.Remove(moleculeID);
 
-            LogBoxContents();
+            // LogBoxContents();
             createEquationScript.UpdateEquation();
         }
     }
