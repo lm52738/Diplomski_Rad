@@ -79,8 +79,10 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Classes\IonType.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\_Course Library\Scripts\Testing\UserLogger.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\_Course Library\Scripts\ScriptAssets\UserLogs.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\_Course Library\Scripts\ScriptAssets\Atoms.txt" />
@@ -97,6 +99,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Logs\user_activity_log.txt" />
      <None Include="Assets\_Course Library\Scripts\ScriptAssets\Equations.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\_Course Library\Licenses.txt" />
