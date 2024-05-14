@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+///<summary>
+/// Represents different types of ions.
+///</summary>
 public class IonType
 {
     // Fields

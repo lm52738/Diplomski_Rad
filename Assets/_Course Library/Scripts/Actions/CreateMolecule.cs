@@ -1,13 +1,16 @@
-using System;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Handles the creation and management of individual molecules.
+/// </summary>
 public class CreateMolecule : MonoBehaviour
 {
     public GameObject moleculePrefab;
     private float spawnHeightOffset = 0.0764912f; // Adjust this value to set the height offset
     private string moleculeFormula;
     private GameObject[] spawnedMolecules; // Array to store all spawned molecules
+    private int nextMoleculeID = 1; // Counter for the next molecule ID;
 
     private void Start()
     {
@@ -29,7 +32,7 @@ public class CreateMolecule : MonoBehaviour
 
             // Assign a unique ID to the molecule
             Molecule moleculeScript = moleculeInstance.GetComponent<Molecule>();
-            moleculeScript.AssignID();
+            moleculeScript.AssignID(nextMoleculeID++);
 
             // Set the layer of the spawned molecule to match the layer of the mat
             moleculeInstance.layer = gameObject.layer;

@@ -1,10 +1,12 @@
 using UnityEngine;
 
+///<summary>
+/// Represents a molecule in the scene.
+///</summary>
 public class Molecule : MonoBehaviour
 {
     // Unique ID for the molecule
     private int moleculeID;
-    private int nextMoleculeID = 1; // Counter for the next molecule ID;
 
     public int MoleculeID
     {
@@ -12,9 +14,8 @@ public class Molecule : MonoBehaviour
     }
 
     // Method to assign a unique ID to the molecule
-    public void AssignID()
+    public void AssignID(int id)
     {
-        moleculeID = nextMoleculeID;
-        nextMoleculeID++;
+        moleculeID = id;
 }
 }

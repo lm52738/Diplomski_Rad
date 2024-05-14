@@ -1,10 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
+/// <summary>
+/// Manages the display of atom models and information.
+/// </summary>
 public class DisplayAtomModel : MonoBehaviour
 {
     public TMP_Text elementNameText;
@@ -32,7 +33,7 @@ public class DisplayAtomModel : MonoBehaviour
 
     }
 
-
+    // Method to display atom model
     public void DisplayAtom(string symbol)
     {
         RemoveDisplayed();
@@ -61,6 +62,7 @@ public class DisplayAtomModel : MonoBehaviour
         CreateElectronCloud(atom.Electrons);
     }
 
+    // Creates the nucleus with the specified number of subatoms using the given prefab
     private void CreateNucleus(int numberOfSubAtoms, GameObject subAtomPrefab)
     {
         // If there's only one subatom, position it at the center of the nucleus
@@ -88,6 +90,7 @@ public class DisplayAtomModel : MonoBehaviour
         }
     }
 
+    // Generates a random position within the nucleus range
     private Vector3 RandomPositionInNucleus(float radius)
     {
         // Generate random position within the nucleus range
@@ -96,6 +99,7 @@ public class DisplayAtomModel : MonoBehaviour
         return new Vector3(randomX, randomY, 0);
     }
 
+    // Creates the electron cloud with the specified number of electrons
     private void CreateElectronCloud(int totalElectrons)
     {
 
@@ -127,6 +131,7 @@ public class DisplayAtomModel : MonoBehaviour
 
     }
 
+    // Updates the electron cloud size
     public void UpdateElectronCloud()
     {
         // Add one electron to the atom object
@@ -153,9 +158,6 @@ public class DisplayAtomModel : MonoBehaviour
             return; // Do not update electron cloud if the number of electrons exceeds the supported range
         }
 
-        // Update the scale of the electron cloud sphere
-        //electronCloud.transform.localScale = new Vector3(electronCloudRadius, electronCloudRadius, 2.5f);
-
         // Check if the radius has changed
         if (previousRadius != electronCloudRadius)
         {
@@ -172,6 +174,8 @@ public class DisplayAtomModel : MonoBehaviour
         displayAtomInfo.UpdateDisplayedAtom(activeAtom);
     }
 
+
+    // Updates the nucleus with the addition of a subatom (neutron or proton)
     public void UpdateNucleus(string subAtomTag)
     {
         if (subAtomTag == "Neutron")
@@ -201,6 +205,7 @@ public class DisplayAtomModel : MonoBehaviour
 
     }
 
+    // Removes all displayed prefabs and deactivates the electron cloud
     public void RemoveDisplayed()
     {
         // Destroy all displayed prefabs
@@ -216,28 +221,38 @@ public class DisplayAtomModel : MonoBehaviour
         electronCloud.SetActive(false);
     }
 
+    // Resets the list of atoms by reading from file
     private void ResetAtoms()
     {
         atoms.Clear();
 
-        // Initialize Atom objects for each element in neutral condition
-        atoms.Add(new Atom("Hydrogen", "H", 1, 0, 1));
-        atoms.Add(new Atom("Helium", "He", 2, 2, 2));
-        atoms.Add(new Atom("Lithium", "Li", 3, 4, 3));
-        atoms.Add(new Atom("Beryllium", "Be", 4, 5, 4));
-        atoms.Add(new Atom("Boron", "B", 5, 6, 5));
-        atoms.Add(new Atom("Carbon", "C", 6, 6, 6));
-        atoms.Add(new Atom("Nitrogen", "N", 7, 7, 7));
-        atoms.Add(new Atom("Oxygen", "O", 8, 8, 8));
-        atoms.Add(new Atom("Fluorine", "F", 9, 10, 9));
-        atoms.Add(new Atom("Neon", "Ne", 10, 10, 10));
-        atoms.Add(new Atom("Sodium", "Na", 11, 12, 11));
-        atoms.Add(new Atom("Magnesium", "Mg", 12, 12, 12));
-        atoms.Add(new Atom("Aluminum", "Al", 13, 14, 13));
-        atoms.Add(new Atom("Silicon", "Si", 14, 14, 14));
-        atoms.Add(new Atom("Phosphorus", "P", 15, 16, 15));
-        atoms.Add(new Atom("Sulfur", "S", 16, 16, 16));
-        atoms.Add(new Atom("Chlorine", "Cl", 17, 18, 17));
-        atoms.Add(new Atom("Argon", "Ar", 18, 22, 18));
+        try
+        {
+            string[] lines = File.ReadAllLines("Assets/_Course Library/Scripts/ScriptAssets/Atoms.txt");
+
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split('|');
+                if (parts.Length == 10)
+                {
+                    string name = parts[0].Trim();
+                    string symbol = parts[1].Trim();
+                    int protons = int.Parse(parts[2].Trim());
+                    int neutrons = int.Parse(parts[3].Trim());
+                    int electrons = int.Parse(parts[4].Trim());
+
+                    Atom atom = new Atom(name, symbol, protons, neutrons, electrons);
+                    atoms.Add(atom);
+                }
+                else
+                {
+                    Debug.LogError("Invalid format in atom line: " + line);
+                }
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            Debug.LogError("Atoms file not found!");
+        }
     }
 }

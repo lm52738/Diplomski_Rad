@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+/// <summary>
+/// Represents an atom with various properties such as name, symbol, protons, neutrons, electrons, etc.
+/// </summary>
 public class Atom 
 {
     // Fields

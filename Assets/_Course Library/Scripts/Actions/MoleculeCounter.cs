@@ -1,8 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages counting molecules inside a box collider and updates the equation canvas.
+/// </summary>
 public class MoleculeCounter : MonoBehaviour
 {
     public GameObject canvasWithCreateEquation;
@@ -30,7 +32,7 @@ public class MoleculeCounter : MonoBehaviour
         audioSource.clip = collisionSound;
     }
 
-
+    // Handles collision events when molecules enter the collider
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collidedObject = collision.gameObject;
@@ -38,23 +40,24 @@ public class MoleculeCounter : MonoBehaviour
         // Check if the collided object is a molecule and has the same layer as the box
         if (collidedObject.CompareTag("Molecule") && collidedObject.layer == boxLayer)
         {
-            audioSource.PlayOneShot(collisionSound, 1);
             Molecule molecule = collidedObject.GetComponent<Molecule>();
             int moleculeID = molecule.MoleculeID;
 
             // Check if the molecule with this ID has already collided
             if (!collidedMoleculeIDs.Contains(moleculeID))
             {
+                audioSource.PlayOneShot(collisionSound, 1);
+
                 // Add the molecule ID to the list
                 collidedMoleculeIDs.Add(moleculeID);
 
                 // Add the molecule to the list and log
                 moleculesInside.Add(collidedObject);
 
-                // LogBoxContents();
+                 //LogBoxContents();
 
                 createEquationScript.UpdateEquation();
-            }             
+            }
         }
         else
         {
@@ -63,6 +66,7 @@ public class MoleculeCounter : MonoBehaviour
         }
     }
 
+    // Handles collision events when molecules exit the collider
     private void OnCollisionExit(Collision collision)
     {
         GameObject collidedObject = collision.gameObject;
@@ -79,23 +83,25 @@ public class MoleculeCounter : MonoBehaviour
             // Remove the molecule ID from the list
             collidedMoleculeIDs.Remove(moleculeID);
 
-            // LogBoxContents();
+             //LogBoxContents();
             createEquationScript.UpdateEquation();
         }
     }
 
+    // Logs the formulas of molecules inside the box
     private void LogBoxContents()
     {
-        //Debug.Log("Contents of the box " + LayerMask.LayerToName(boxLayer) + ": ");
+        Debug.Log("Contents of the box " + LayerMask.LayerToName(boxLayer) + ": ");
 
         foreach (GameObject molecule in moleculesInside)
         {
             // Retrieve the molecule formula from the collided molecule GameObject
             string moleculeFormula = molecule.GetComponentInChildren<TextMeshProUGUI>().text;
-            //Debug.Log("- " + moleculeFormula);
+            Debug.Log("- " + moleculeFormula);
         }
     }
 
+    // Returns the list of molecules inside the box
     public List<GameObject> GetMoleculeCount()
     {
         return moleculesInside;

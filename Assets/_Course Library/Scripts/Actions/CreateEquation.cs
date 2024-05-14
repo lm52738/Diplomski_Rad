@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
+/// <summary>
+/// This class handles the creation and management of chemical equations.
+/// </summary>
 public class CreateEquation : MonoBehaviour
 {
     public TextMeshProUGUI equationText;
@@ -39,19 +39,20 @@ public class CreateEquation : MonoBehaviour
 
     public string GetEquationText()
     {
-        Debug.Log("GetEquationText: " + currentEquationText);
+        //Debug.Log("GetEquationText: " + currentEquationText);
         return currentEquationText;
     }
 
+    // Moves to the next level
     public void NextLevel()
     {
         currentLevel++;
         if (currentLevel <= equations.Length)
         {
             Equation currentEquation = equations[currentLevel - 1];
-            //equationText.text = currentEquation.Template;
+
             ShowEquation(currentEquation.Template, currentEquation);
-            Debug.Log(equationText.text);
+            // Debug.Log(equationText.text);
 
             DistributeMolecules(reagentsMats, currentEquation.Reagents, "Reagents");
             DistributeMolecules(productsMats, currentEquation.Products, "Products");
@@ -63,24 +64,29 @@ public class CreateEquation : MonoBehaviour
         }
     }
 
+    // Initializes equations from a file
     void InitializeEquations()
     {
-        equations = new Equation[]
+        List<string> equationLines = new List<string>();
+
+        try
         {
-            new Equation("1 CH<sub>4</sub> + 2 O<sub>2</sub> → 1 CO<sub>2</sub> + 2 H<sub>2</sub>O"),
-            new Equation("4 Cu + 1 O<sub>2</sub> → 2 Cu<sub>2</sub>O"),
-            new Equation("1 N<sub>2</sub> + 3 H<sub>2</sub> → 2 NH<sub>3</sub>"),
-            new Equation("4 Al + 3 O<sub>2</sub> → 2 Al<sub>2</sub>O<sub>3</sub>"),
-            new Equation("2 H<sub>2</sub>O → 2 H<sub>2</sub> + 1 O<sub>2</sub>")
-        };
+            // Read equations from file
+            equationLines = File.ReadAllLines("Assets/_Course Library/Scripts/ScriptAssets/Equations.txt").ToList();
+        }
+        catch (FileNotFoundException)
+        {
+            Debug.LogError("Equations file not found!");
+            return;
+        }
+
+        equations = equationLines.Select(line => new Equation(line)).ToArray();
     }
 
+    // Displays the equation
     void ShowEquation(string text, Equation equation)
     {
-
         currentEquationText = text;
-
-        string formattedText = "";
 
         // Split the text into reagents and products
         string[] parts = text.Split('→');
@@ -94,12 +100,13 @@ public class CreateEquation : MonoBehaviour
         string formattedProducts = FormatMolecules(productsText, equation.Products);
 
         // Combine reagents and products
-        formattedText = formattedReagents + " → " + formattedProducts;
+        string formattedText = formattedReagents + " → " + formattedProducts;
 
         // Set the formatted text to the equation text
         equationText.text = formattedText;
     }
 
+    // Formats molecules in the equation
     string FormatMolecules(string moleculesText, List<(string, int)> molecules)
     {
         string formattedText = "";
@@ -148,6 +155,7 @@ public class CreateEquation : MonoBehaviour
         return formattedText;
     }
 
+    // Distributes molecules to mats
     void DistributeMolecules(GameObject[] mats, List<(string, int)> molecules, string matTagPrefix)
     {
         int matIndex = 1;
@@ -178,6 +186,7 @@ public class CreateEquation : MonoBehaviour
         }
     }
 
+    // Finds mat with given tag
     GameObject FindMatWithTag(GameObject[] mats, string tag)
     {
         foreach (GameObject mat in mats)
@@ -190,6 +199,7 @@ public class CreateEquation : MonoBehaviour
         return null;
     }
 
+    // Assigns molecule to mat
     void AssignMoleculeToMat(GameObject mat, string moleculeFormula)
     {
         CreateMolecule createMolecule = mat.GetComponentInChildren<CreateMolecule>();
@@ -203,6 +213,7 @@ public class CreateEquation : MonoBehaviour
         }
     }
 
+    // Updates the equation based on current counts
     public void UpdateEquation()
     {
         // Get the list of molecules inside the reagents box
@@ -252,6 +263,7 @@ public class CreateEquation : MonoBehaviour
         ShowEquation(updatedEquation, currentEquation);
     }
 
+    // Counts molecules
     private Dictionary<string, int> CountMolecules(List<GameObject> molecules)
     {
         Dictionary<string, int> moleculeCounts = new Dictionary<string, int>();
@@ -273,9 +285,10 @@ public class CreateEquation : MonoBehaviour
         return moleculeCounts;
     }
 
+    // Updates molecule count
     private string UpdateMoleculeCount(string equation, string moleculeType, int count, int finalCount, string side)
     {
-        Debug.Log(equation + " -> " + side + ", " + moleculeType + " -> " + count);
+        //Debug.Log(equation + " -> " + side + ", " + moleculeType + " -> " + count);
 
         string target = @"\b0\s*" + Regex.Escape(moleculeType); // Pattern for reagents
         if (side == "Products")
@@ -287,7 +300,6 @@ public class CreateEquation : MonoBehaviour
 
         if (match.Success)
         {
-            int existingCount = match.Groups[2].Success ? int.Parse(match.Groups[2].Value) : 0; // change from 1 to 0
             int newCount = count; // Just set the new count directly
 
             //Debug.Log("Updated molecule count for " + moleculeType + " on " + side + " side from " + existingCount + " to " + newCount);

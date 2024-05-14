@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using UnityEngine;
 
+/// <summary>
+/// Represents a chemical equation and provides methods to parse and manipulate it.
+/// </summary>
 public class Equation
 {
     public string FullEquation { get; private set; }
@@ -19,6 +20,7 @@ public class Equation
         ParseEquation();
     }
 
+    // Parses the chemical equation into reagents and products.
     private void ParseEquation()
     {
         // Split the equation into reagents and products
@@ -36,6 +38,7 @@ public class Equation
         ParseMolecules(products, false);
     }
 
+    // Adds "0" in front of each molecule in the given string.
     private string AddZeroes(string molecules)
     {
         // Use a regular expression to add "0" in front of each molecule
@@ -43,6 +46,7 @@ public class Equation
 
     }
 
+    // Parses the molecules string and adds them to the appropriate list (reagents or products).
     private void ParseMolecules(string molecules, bool isReagent)
     {
         // Split the molecules string into individual molecules

@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+///<summary>
+/// Checks the correctness of the equation and displays appropriate messages.
+///</summary>
 public class CheckEquation : MonoBehaviour
 {
     public GameObject canvasWithCreateEquation;
@@ -32,6 +35,7 @@ public class CheckEquation : MonoBehaviour
         StartCoroutine(CheckEquationCoroutine());
     }
 
+    // Coroutine to periodically check the current equation.
     IEnumerator CheckEquationCoroutine()
     {
         // Check the equation every 2 seconds
@@ -42,6 +46,7 @@ public class CheckEquation : MonoBehaviour
         }
     }
 
+    // Checks the current equation for correctness.
     void CheckCurrentEquation()
     {
         // Get the current equation and its text
@@ -64,12 +69,12 @@ public class CheckEquation : MonoBehaviour
         // Get the full equation text
         string fullEquationText = currentEquation.FullEquation;
 
-        Debug.Log(currentEquationText + " : " + fullEquationText);
+        //Debug.Log(currentEquationText + " : " + fullEquationText);
 
         // Check if the current equation text matches the full equation
         if (currentEquationText.Equals(fullEquationText))
         {
-            Debug.Log("Equation is correct!");
+            //Debug.Log("Equation is correct!");
             StartFireworks(); // Call method to start the fireworks particle systems
             ShowMessage("Correct! Proceed to the next level."); // Display message on the canvas
 
@@ -91,6 +96,7 @@ public class CheckEquation : MonoBehaviour
         }
     }
 
+    // Starts the fireworks particle systems and plays associated sounds.
     void StartFireworks()
     {
         // Start all fireworks particle systems in the list
@@ -107,6 +113,7 @@ public class CheckEquation : MonoBehaviour
         }
     }
 
+    // Stops the fireworks particle systems and associated sounds.
     void StopFireworks()
     {
         // Stop all fireworks particle systems in the list
@@ -121,6 +128,7 @@ public class CheckEquation : MonoBehaviour
         }
     }
 
+    // Displays a message on the canvas with optional color settings.
     void ShowMessage(string message)
     {
         // Display the message on the canvas
