@@ -79,7 +79,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Classes\IonType.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\_Course Library\Scripts\Testing\UserLogger.cs" />
+    <Compile Include="Assets\_Course Library\Scripts\Testing\OculusPlatformManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\_Course Library\Scripts\ScriptAssets\UserLogs.txt" />
@@ -792,6 +792,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Oculus.Platform.csproj">
+      <Project>{AF930EFC-B3C0-1772-9A74-96342EB3B987}</Project>
+      <Name>Oculus.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.Platform.Editor.csproj">
+      <Project>{08F24227-3596-9FEC-24CE-3B868ADDE73C}</Project>
+      <Name>Oculus.Platform.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

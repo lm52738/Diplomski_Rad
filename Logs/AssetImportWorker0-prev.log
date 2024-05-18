@@ -15,12 +15,12 @@ C:/Users/Lorena/Desktop/Create with VR/VR - Chemistry
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60709
+54204
 Successfully changed project path to: C:/Users/Lorena/Desktop/Create with VR/VR - Chemistry
 C:/Users/Lorena/Desktop/Create with VR/VR - Chemistry
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 81.57 ms, found 8 plugins.
-Preloading 1 native plugins for Editor in 0.96 ms.
+Refreshing native plugins compatible for Editor in 94.78 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 1.07 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Lorena/Desktop/Create with VR/VR - Chemistry/Assets
@@ -36,26 +36,26 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56104
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001978 seconds.
+Registered in 0.002595 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 60.74 ms, found 8 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
+Refreshing native plugins compatible for Editor in 170.30 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.13 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.351 seconds
+- Completed reload, in  2.751 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005338 seconds.
+Registered in 0.010797 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 63.29 ms, found 8 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
+Refreshing native plugins compatible for Editor in 121.23 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.14 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
@@ -70,34 +70,146 @@ NullReferenceException: Object reference not set to an instance of an object
 (Filename: C:/Users/Lorena/Desktop/Create with VR/VR Game - PH scale/Library/PackageCache/com.unity.xr.oculus@1.8.1/Runtime/OculusLoader.cs Line: 243)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.146 seconds
+- Completed reload, in  3.629 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.79 ms, found 8 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
-Unloading 3076 Unused Serialized files (Serialized files now loaded: 0)
+Refreshing native plugins compatible for Editor in 1.40 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.15 ms.
+Unloading 3077 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 166.6 MB.
-System memory in use after: 166.6 MB.
+System memory in use after: 166.7 MB.
 
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 3536.
-Total: 3.328300 ms (FindLiveObjects: 0.554700 ms CreateObjectMapping: 0.223500 ms MarkObjects: 2.401800 ms  DeleteObjects: 0.147200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Settings/UniversalRenderPipelineAsset.asset
-  artifactKey: Guid(ca51ab8269d7945dd9bbb86c7c9a4ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/UniversalRenderPipelineAsset.asset using Guid(ca51ab8269d7945dd9bbb86c7c9a4ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59cbfb770dfda01c3728b8b96628a510') in 0.062469 seconds
-  Import took 0.067996 seconds .
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 3537.
+Total: 3.713700 ms (FindLiveObjects: 0.731900 ms CreateObjectMapping: 0.374700 ms MarkObjects: 2.479200 ms  DeleteObjects: 0.127000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000386 seconds.
-  path: Assets/Settings/UniversalRenderPipelineAsset_Renderer.asset
-  artifactKey: Guid(d9e88bdd0f5f0462ebf470d8ea4b285e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/UniversalRenderPipelineAsset_Renderer.asset using Guid(d9e88bdd0f5f0462ebf470d8ea4b285e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fec2069c8ec907855ddf662189e75930') in 0.009210 seconds
-  Import took 0.014652 seconds .
+  path: Packages/com.unity.xr.oculus/README.md
+  artifactKey: Guid(b7cb11f4101abf944a7a62fe8fc1a79b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/README.md using Guid(b7cb11f4101abf944a7a62fe8fc1a79b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8127095ee1a49a92b312ef6351acce3b') in 0.107688 seconds
+  Import took 0.115788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.816947 seconds.
+  path: Packages/com.unity.xr.oculus/OVRPluginLICENSE.txt
+  artifactKey: Guid(bdd9e7ae7b567ba4089f0b7822b78c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/OVRPluginLICENSE.txt using Guid(bdd9e7ae7b567ba4089f0b7822b78c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9362b4b10294afcd0b141aa3223c4a') in 0.017724 seconds
+  Import took 0.027805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.246101 seconds.
+  path: Packages/com.unity.xr.oculus/OVRPluginLICENSE.txt
+  artifactKey: Guid(bdd9e7ae7b567ba4089f0b7822b78c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/OVRPluginLICENSE.txt using Guid(bdd9e7ae7b567ba4089f0b7822b78c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9362b4b10294afcd0b141aa3223c4a') in 0.002654 seconds
+  Import took 0.009249 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.069917 seconds.
+  path: Packages/com.unity.xr.oculus/LICENSE.md
+  artifactKey: Guid(b930ccc27895a434ba104b6f1fb6fb9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/LICENSE.md using Guid(b930ccc27895a434ba104b6f1fb6fb9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc5f0998bebc0a08ba240bdf6c02846') in 0.012249 seconds
+  Import took 0.017678 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.812704 seconds.
+  path: Packages/com.unity.xr.oculus/CHANGELOG.md
+  artifactKey: Guid(4f448b730a978ac4a83d1f4e6501aa12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/CHANGELOG.md using Guid(4f448b730a978ac4a83d1f4e6501aa12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c47142856ce262ad290be218952040') in 0.010772 seconds
+  Import took 0.017684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001076 seconds.
+  path: Packages/com.unity.xr.oculus/CHANGELOG.md
+  artifactKey: Guid(4f448b730a978ac4a83d1f4e6501aa12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/CHANGELOG.md using Guid(4f448b730a978ac4a83d1f4e6501aa12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c47142856ce262ad290be218952040') in 0.004473 seconds
+  Import took 0.010874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.477924 seconds.
+  path: Packages/com.unity.xr.oculus/AudioPluginOculusSpatializerLICENSE.txt
+  artifactKey: Guid(8c9d89665bf991945a7b101f38be7b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/AudioPluginOculusSpatializerLICENSE.txt using Guid(8c9d89665bf991945a7b101f38be7b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316d2b4b42b3145837ef3954889c9e7f') in 0.011048 seconds
+  Import took 0.018995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001937 seconds.
+  path: Packages/com.unity.xr.oculus/AudioPluginOculusSpatializerLICENSE.txt
+  artifactKey: Guid(8c9d89665bf991945a7b101f38be7b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/AudioPluginOculusSpatializerLICENSE.txt using Guid(8c9d89665bf991945a7b101f38be7b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316d2b4b42b3145837ef3954889c9e7f') in 0.005958 seconds
+  Import took 0.015202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.083076 seconds.
+  path: Packages/com.unity.xr.oculus/Runtime
+  artifactKey: Guid(d4772276682408b45a059418401ddd9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/Runtime using Guid(d4772276682408b45a059418401ddd9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf9169e2adf92ccb57a9b1a3a8981ed') in 0.010039 seconds
+  Import took 0.016330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.049144 seconds.
+  path: Packages/com.unity.xr.oculus/Runtime/Unity.XR.Oculus.asmdef
+  artifactKey: Guid(4af21795022437d4bb139a86514b9ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/Runtime/Unity.XR.Oculus.asmdef using Guid(4af21795022437d4bb139a86514b9ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cf44a6f51136a0b86cb5075658dd4f7') in 0.010783 seconds
+  Import took 0.017126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.919690 seconds.
+  path: Packages/com.unity.xr.oculus/Runtime/Android
+  artifactKey: Guid(0fe3eb93fbf42844a9267549f4c8f855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/Runtime/Android using Guid(0fe3eb93fbf42844a9267549f4c8f855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3bbdd37d94fa46851cbaa0c38fd2800') in 0.009979 seconds
+  Import took 0.015653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.449799 seconds.
+  path: Packages/com.unity.xr.oculus/Editor/Unity.XR.Oculus.Editor.asmdef
+  artifactKey: Guid(d1502596da9f12c4ead8bb8b8542bdc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.oculus/Editor/Unity.XR.Oculus.Editor.asmdef using Guid(d1502596da9f12c4ead8bb8b8542bdc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd887802306969d2b3bf1435a028af951') in 0.009544 seconds
+  Import took 0.015880 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.633670 seconds.
+  path: Assets/XR/XRGeneralSettings.asset
+  artifactKey: Guid(d3134b6f939114be9b8d6dbeff42d453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/XR/XRGeneralSettings.asset using Guid(d3134b6f939114be9b8d6dbeff42d453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af2e77e72ff4a54cec68f7e97c6e6f2c') in 0.023118 seconds
+  Import took 0.030376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.608196 seconds.
+  path: Packages/com.unity.xr.legacyinputhelpers/package.json
+  artifactKey: Guid(d16ab7e2b2998ad4c9729d86bb9aa666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.legacyinputhelpers/package.json using Guid(d16ab7e2b2998ad4c9729d86bb9aa666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '167faae2a453d4622d9171c036baa113') in 0.016169 seconds
+  Import took 0.021763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.501491 seconds.
+  path: Packages/com.unity.xr.management/package.json
+  artifactKey: Guid(a8437ae6df3ab4de78c661f8e1148bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.management/package.json using Guid(a8437ae6df3ab4de78c661f8e1148bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4a30cb5935a7d477770bd9d712965b1') in 0.008501 seconds
+  Import took 0.016354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.998446 seconds.
+  path: Assets/_Course Library/Scripts
+  artifactKey: Guid(84c8d5c187f7f5644bb628e32880bf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Course Library/Scripts using Guid(84c8d5c187f7f5644bb628e32880bf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94b07b9efc7e3816f77edeb4e7e09729') in 0.011833 seconds
+  Import took 0.018545 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
