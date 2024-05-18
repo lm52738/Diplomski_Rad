@@ -6840,7 +6840,7 @@ Transform:
   - {fileID: 116219796}
   - {fileID: 171753555}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562209223
 GameObject:
@@ -9470,7 +9470,7 @@ Transform:
   - {fileID: 898395113}
   - {fileID: 1509113048}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917627899
 GameObject:
@@ -12975,7 +12975,7 @@ Transform:
   - {fileID: 1461045541}
   - {fileID: 428543932}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1205000408 stripped
 Transform:
@@ -13546,7 +13546,7 @@ GameObject:
   - component: {fileID: 1304530883}
   - component: {fileID: 1304530884}
   - component: {fileID: 1304530885}
-  - component: {fileID: 1304530886}
+  - component: {fileID: 1304530887}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13793,7 +13793,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1304530886
+--- !u!114 &1304530887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13802,7 +13802,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1304530879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b83d48717744a4499865bd39fc5272, type: 3}
+  m_Script: {fileID: 11500000, guid: 467e86df7013d1c4e9a787b13adbaa26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   game: Atom Structure
