@@ -67,20 +67,14 @@ public class CreateEquation : MonoBehaviour
     // Initializes equations from a file
     void InitializeEquations()
     {
-        List<string> equationLines = new List<string>();
-
-        try
+        equations = new Equation[]
         {
-            // Read equations from file
-            equationLines = File.ReadAllLines("Assets/_Course Library/Scripts/ScriptAssets/Equations.txt").ToList();
-        }
-        catch (FileNotFoundException)
-        {
-            Debug.LogError("Equations file not found!");
-            return;
-        }
-
-        equations = equationLines.Select(line => new Equation(line)).ToArray();
+            new Equation("1 CH<sub>4</sub> + 2 O<sub>2</sub> → 1 CO<sub>2</sub> + 2 H<sub>2</sub>O"),
+            new Equation("4 Cu + 1 O<sub>2</sub> → 2 Cu<sub>2</sub>O"),
+            new Equation("1 N<sub>2</sub> + 3 H<sub>2</sub> → 2 NH<sub>3</sub>"),
+            new Equation("4 Al + 3 O<sub>2</sub> → 2 Al<sub>2</sub>O<sub>3</sub>"),
+            new Equation("2 H<sub>2</sub>O → 2 H<sub>2</sub> + 1 O<sub>2</sub>")
+        };
     }
 
     // Displays the equation

@@ -53,12 +53,12 @@
     <UnityVersion>2020.3.1f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Oculus\Platform\Editor\OculusPlatformSettingsEditor.cs" />
-    <Compile Include="Assets\Oculus\Platform\Editor\OculusStandalonePlatformResponse.cs" />
+    <Compile Include="Assets\Oculus\Platform\Editor\GUIHelper.cs" />
     <Compile Include="Assets\Oculus\Platform\Editor\OculusPluginUpdaterStub.cs" />
     <Compile Include="Assets\Oculus\Platform\Editor\MetaGraphVariablesParam.cs" />
+    <Compile Include="Assets\Oculus\Platform\Editor\OculusPlatformSettingsEditor.cs" />
+    <Compile Include="Assets\Oculus\Platform\Editor\OculusStandalonePlatformResponse.cs" />
     <Compile Include="Assets\Oculus\Platform\Editor\HorizonProfileTokenResponse.cs" />
-    <Compile Include="Assets\Oculus\Platform\Editor\GUIHelper.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Oculus\Platform\Editor\Oculus.Platform.Editor.asmdef" />
