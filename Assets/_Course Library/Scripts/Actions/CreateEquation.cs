@@ -49,6 +49,12 @@ public class CreateEquation : MonoBehaviour
         currentLevel++;
         if (currentLevel <= equations.Length)
         {
+            // Destroy existing molecules
+            MoleculeCounter reagentsCounter = reagentsBox.GetComponent<MoleculeCounter>();
+            MoleculeCounter productsCounter = productsBox.GetComponent<MoleculeCounter>();
+            reagentsCounter.DestroyMolecules();
+            productsCounter.DestroyMolecules();
+
             Equation currentEquation = equations[currentLevel - 1];
 
             ShowEquation(currentEquation.Template, currentEquation);
@@ -282,30 +288,45 @@ public class CreateEquation : MonoBehaviour
     // Updates molecule count
     private string UpdateMoleculeCount(string equation, string moleculeType, int count, int finalCount, string side)
     {
-        //Debug.Log(equation + " -> " + side + ", " + moleculeType + " -> " + count);
+        // Debug.Log(equation + " -> " + side + ", " + moleculeType + " -> " + count);
 
-        string target = @"\b0\s*" + Regex.Escape(moleculeType); // Pattern for reagents
-        if (side == "Products")
-            target = @"\b0\s*" + Regex.Escape(moleculeType); // Pattern for products
+        // Split the equation into reagents and products
+        string[] parts = equation.Split('→');
+        string reagents = parts[0].Trim();
+        string products = parts[1].Trim();
 
-        string pattern = @"((\d+)\s*)?" + target + @"(?![^<]*>)";
+        // Determine which side to update
+        string[] reagentMolecules = reagents.Split('+');
+        string[] productMolecules = products.Split('+');
 
-        Match match = Regex.Match(equation, pattern);
-
-        if (match.Success)
+        // Iterate through molecules to find and update the count
+        if (side == "Reagents")
         {
-            int newCount = count; // Just set the new count directly
-
-            //Debug.Log("Updated molecule count for " + moleculeType + " on " + side + " side from " + existingCount + " to " + newCount);
-
-            return Regex.Replace(equation, pattern, newCount.ToString() + " " + moleculeType);
+            for (int i = 0; i < reagentMolecules.Length; i++)
+            {
+                if (reagentMolecules[i].Contains(moleculeType))
+                {
+                    reagentMolecules[i] = $"{count} {moleculeType}";
+                }
+            }
         }
-        else
+        else // Update products side
         {
-            // Log that no match was found
-            Debug.LogWarning("No match found for molecule type " + moleculeType + " on " + side + " side");
-
-            return equation;
+            for (int i = 0; i < productMolecules.Length; i++)
+            {
+                if (productMolecules[i].Contains(moleculeType))
+                {
+                    productMolecules[i] = $"{count} {moleculeType}";
+                }
+            }
         }
+
+        // Reconstruct the equation with the updated counts
+        string newEquation = string.Join(" + ", reagentMolecules.Select(m => m.Trim()));
+        newEquation += $" → {string.Join(" + ", productMolecules.Select(m => m.Trim()))}";
+
+        // Debug.Log("Updated Equation: " + newEquation);
+        return newEquation;
     }
+
 }

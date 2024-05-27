@@ -69,7 +69,7 @@ public class CheckEquation : MonoBehaviour
         // Get the full equation text
         string fullEquationText = currentEquation.FullEquation;
 
-        //Debug.Log(currentEquationText + " : " + fullEquationText);
+        // Debug.Log(currentEquationText + " : " + fullEquationText);
 
         // Check if the current equation text matches the full equation
         if (currentEquationText.Equals(fullEquationText))
