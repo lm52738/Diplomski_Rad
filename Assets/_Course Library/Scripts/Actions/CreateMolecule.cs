@@ -19,7 +19,7 @@ public class CreateMolecule : MonoBehaviour
 
     private void Update()
     {
-        // Check if the carpet center is empty
+        // Check if the mat center is empty
         if (IsEmpty() && moleculeFormula != null && !moleculeFormula.Equals(""))
         {
             // Get the height of the mat
